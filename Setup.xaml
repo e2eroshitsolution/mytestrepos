@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpectrumApp.Setup"
+             Title="Setup" BackgroundColor="#0B2447">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#0B2447"></Setter>
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Image
+    Source="hand.png"
+    SemanticProperties.Description="Spectrum Logo"
+    HeightRequest="200"
+/>
+            <!-- Collapsible Headers -->
+            <ScrollView x:Name="ScrollView" >
+                <StackLayout Padding="10">
+                    <!-- First Collapsible Header -->
+                    <Grid x:Name="CollapsibleHeader1" Margin="0,0,0,10">
+                        <Frame CornerRadius="30" Padding="15,5,5,5" BackgroundColor="Blue">
+                            <Label Text="Machine Specifications" AutomationId="0" FontSize="25" FontAttributes="Bold" TextColor="White"
+            >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnHeaderTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                        <StackLayout x:Name="ContentLayout1" Padding="20" IsVisible="False" BackgroundColor="White" Margin="0,-8,0,10">
+
+                            <Grid ColumnSpacing="10" RowSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                            </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Model Number :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0"></Label>
+
+                                <Border Grid.Column="1"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="5" />
+                                    </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+
+                                </Border>
+                                <Label Text="Serial Number :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"></Label>
+                                <Border Grid.Column="1" Grid.Row="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="5" />
+                                    </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+
+                                </Border>
+                                <Label Text="Date of Installation :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="2" Grid.Column="0"></Label>
+
+                                <Border Grid.Row="2" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="5" />
+                                    </Border.StrokeShape>
+                                <DatePicker HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></DatePicker>
+                                </Border>
+                                
+                                <Label Text="Canister Number :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="3" Grid.Column="0"></Label>
+                                <Label HorizontalOptions="Start" VerticalTextAlignment="Center" TextColor="Black" WidthRequest="100" HeightRequest="35" Text="16" Grid.Row="3" Grid.Column="1" Margin="30, 0,0,0"></Label>
+                                <Label Text="Canister Unit :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="4" Grid.Column="0"></Label>
+
+                                <Border Grid.Row="4" Grid.Column="1"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="Can Size :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="5" Grid.Column="0"></Label>
+
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="6" Margin="0,-40,0,0">
+                                <RadioButton Content="Normal" x:Name="cansizeNormal" GroupName="rbtnCanSize" />
+                                <RadioButton Content="Hi Tint" x:Name="canSizeHiTint" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+                            <Label Text="Canister Unit :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="7" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="7" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="Canister Max Level :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="8" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="8" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="ml" Grid.Row="8" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center"></Label>
+                            <Label Text="Canister Reserve Level :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="9" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="9" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5"/>
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="ml" Grid.Row="9" Grid.Column="1" HorizontalTextAlignment="End" FontSize="11" VerticalTextAlignment="Center"></Label>
+
+                            <Border Grid.Row="10" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Button HorizontalOptions="Start" Text="Hi Tint" TextColor="White" WidthRequest="100" FontAttributes="Bold" HeightRequest="35" BackgroundColor="Blue"></Button>
+                            </Border>
+                            <Label Text="Purge Quantity :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="11" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="11" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="Company Name :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="12" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="12" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="Version :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="13" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="13" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                        </Grid>
+                        </StackLayout>
+
+
+                    <!-- Second Collapsible Header -->
+                    <Grid x:Name="CollapsibleHeader2" Margin="0,0,0,10">
+                        <Frame CornerRadius="30" Padding="15,5,5,5" BackgroundColor="Blue">
+                            <Label Text="Dealer Details" AutomationId="1" FontSize="25" FontAttributes="Bold" TextColor="White"
+          >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnHeaderTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                    <StackLayout x:Name="ContentLayout2" Padding="20" IsVisible="False" BackgroundColor="White" Margin="0,-8,0,10">
+
+                        <Grid ColumnSpacing="10" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Dealer Shop Name :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0"></Label>
+
+                            <Border Grid.Column="1"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+
+                            </Border>
+                            <Label Text="Address Line 1 :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"></Label>
+                            <Border Grid.Column="1" Grid.Row="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+
+                            </Border>
+                            <Label Text="Address Line 2 :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="2" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="2" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+
+                            <Label Text="City :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="3" Grid.Column="0"></Label>
+                            <Border Grid.Row="3" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="State :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="4" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="4" Grid.Column="1"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                           
+                            <Label Text="Pin Code :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="6" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="6" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="Dealer Name :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="7" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="7" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            <Label Text="Dealer Code :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="8" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="8" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                        </Grid>
+                    </StackLayout>
+
+                    <Grid x:Name="CollapsibleHeader3" Margin="0,0,0,10">
+                        <Frame CornerRadius="30" Padding="15,5,5,5" BackgroundColor="Blue">
+                            <Label Text="Advanced" AutomationId="2" FontSize="25" FontAttributes="Bold" TextColor="White"
+            >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnHeaderTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                    <StackLayout x:Name="ContentLayout3" Padding="20" IsVisible="False" BackgroundColor="White" Margin="0,-8,0,10">
+
+                        <Grid ColumnSpacing="10" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Don't Use Password :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0"></Label>
+                            <CheckBox  Grid.Column="1" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+                            <Label Text="Upload History :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"></Label>
+                            <CheckBox  Grid.Column="1" Grid.Row="1" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+                            <Label Text="Use Dispense and Fill :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="2" Grid.Column="0"></Label>
+                            <CheckBox  Grid.Column="1" Grid.Row="2" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+
+                            <Label Text="Use Auto Dispense :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="3" Grid.Column="0"></Label>
+                            <CheckBox  Grid.Column="1" Grid.Row="3" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+                            <Label Text="Base price on product :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="4" Grid.Column="0"></Label>
+
+                            <CheckBox  Grid.Column="1" Grid.Row="4" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+                            <Label Text="Use Auto Recycle on Start :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="5" Grid.Column="0"></Label>
+                            <CheckBox  Grid.Column="1" Grid.Row="5" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+                            <Label Text="Disable Edit Shade :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="6" Grid.Column="0"></Label>
+                            <CheckBox  Grid.Column="1" Grid.Row="6" HorizontalOptions="Start" WidthRequest="100" HeightRequest="35" Margin="-10, 0,0,0"></CheckBox>
+                            <Label Text="Print Mode :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="7" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="7" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Picker HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>As Per User</x:String>
+                                            <x:String>asdf hkk</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </Border>
+                            <Label Text="Decimal :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="8" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="8" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5"/>
+                                </Border.StrokeShape>
+                                <Picker HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>2</x:String>
+                                            <x:String>3</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </Border>
+
+                            <Label Text="USE MRP :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="9" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="9" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" Keyboard="Numeric" WidthRequest="100" HeightRequest="35" ></Entry>
+                            </Border>
+                            
+                        </Grid>
+                    </StackLayout>
+                    <Grid x:Name="CollapsibleHeader4" Margin="0,0,0,10">
+                        <Frame CornerRadius="30" Padding="15,5,5,5" BackgroundColor="Blue">
+                            <Label Text="System Specifications" AutomationId="3" FontSize="25" FontAttributes="Bold" TextColor="White"
+>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnHeaderTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                    <StackLayout x:Name="ContentLayout4" Padding="20" IsVisible="False" BackgroundColor="White" Margin="0,-8,0,10">
+
+                        <Grid ColumnSpacing="10" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="No.of Cylinders :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0"></Label>
+
+                            <Border Grid.Column="1"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35"></Entry>
+
+                            </Border>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0" Grid.ColumnSpan="2">
+                                <RadioButton Content="Millilite" x:Name="millilite" GroupName="rbtnCanSize" />
+                                <RadioButton Content="Shorts" x:Name="shorts" GroupName="rbtnCanSize" BorderColor="White"/>
+                                <RadioButton Content="Grams" x:Name="grams" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+                            <Label Text="Chip Version :" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="3" Grid.Column="0" Margin="0,0,0,0" Grid.ColumnSpan="2">
+                                <RadioButton Content="1.5" x:Name="version1_5" GroupName="rbtnCanSize" />
+                                <RadioButton Content="1.6" x:Name="version1_6" GroupName="rbtnCanSize" BorderColor="White"/>
+                                <RadioButton Content="1.7" x:Name="version1_7" GroupName="rbtnCanSize" BorderColor="White"/>
+                                <RadioButton Content="1.8" x:Name="version1_8" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+
+                            <Label Text="Display Agitator :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="4" Grid.Column="0"></Label>
+                            <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0" Grid.ColumnSpan="2">
+                                <RadioButton Content="On" x:Name="agitatorOn" GroupName="rbtnCanSize" />
+                                <RadioButton Content="Off" x:Name="agitatorOff" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+                            <Label Text="Default Agitator :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="5" Grid.Column="0"></Label>
+                            <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="1" Margin="0,0,0,0" Grid.ColumnSpan="2">
+                                <RadioButton Content="On" x:Name="DefaultAgitatorOn" GroupName="rbtnCanSize" />
+                                <RadioButton Content="Off" x:Name="DefaultAgitatorOff" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+                            <Label Text="Fill Position :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="6" Grid.Column="0"></Label>
+                            <StackLayout Orientation="Horizontal" Grid.Row="6" Grid.Column="1" Margin="0,0,0,0" Grid.ColumnSpan="2">
+                                <RadioButton Content="Left" x:Name="fillPositionLeft" GroupName="rbtnCanSize" />
+                                <RadioButton Content="Right" x:Name="fillPositionRight" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+                            <Label Text="Company Link :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="7" Grid.Column="0"></Label>
+
+                            <Border Grid.Row="7" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35"></Entry>
+
+                            </Border>
+                            <Label Text="Calibration File Path :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Row="8" Grid.Column="0"></Label>
+                            <Border Grid.Row="8" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Button Text="Select File" Clicked="onFileUploadClicked"></Button>
+
+                            </Border>
+                        </Grid>
+                    </StackLayout>
+
+                    <Grid x:Name="CollapsibleHeader5" Margin="0,0,0,10">
+                        <Frame CornerRadius="30" Padding="15,5,5,5" BackgroundColor="Blue">
+                            <Label Text="Communication Settings" AutomationId="4" FontSize="25" FontAttributes="Bold" TextColor="White"
+>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnHeaderTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                    <StackLayout x:Name="ContentLayout5" Padding="20" IsVisible="False" BackgroundColor="White" Margin="0,-8,0,10">
+
+                        <Grid ColumnSpacing="10" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <!--<Label Text="Mode :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0"></Label>-->
+
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Margin="0,0,0,0" Grid.ColumnSpan="2">
+                                <RadioButton Content="USB" x:Name="usbMode" GroupName="rbtnCanSize" />
+                                <RadioButton Content="WiFi" x:Name="wifiMode" GroupName="rbtnCanSize" BorderColor="White"/>
+                            </StackLayout>
+                            <Label Text="Communication Port :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"></Label>
+                            <Border Grid.Row="1" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Picker HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>As Per User</x:String>
+                                            <x:String>asdf hkk</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </Border>
+                        </Grid>
+                    </StackLayout>
+                    <Grid x:Name="CollapsibleHeader6" Margin="0,0,0,10">
+                        <Frame CornerRadius="30" Padding="15,5,5,5" BackgroundColor="Blue">
+                            <Label Text="Currency" AutomationId="5" FontSize="25" FontAttributes="Bold" TextColor="White"
+>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnHeaderTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                    <StackLayout x:Name="ContentLayout6" Padding="20" IsVisible="False" BackgroundColor="White" Margin="0,-8,0,10">
+
+                        <Grid ColumnSpacing="10" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Currency :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0"></Label>
+
+                            <Border Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35"></Entry>
+                            </Border>
+                            <Label Text="Description :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1"></Label>
+                            <Border Grid.Row="1" Grid.Column="1"
+StrokeThickness="1"
+HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Entry HorizontalOptions="Start" TextColor="Black" WidthRequest="100" HeightRequest="35"></Entry>
+                            </Border>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Frame VerticalOptions="End" Padding="5" BackgroundColor="Blue" HeightRequest="70">
+                <HorizontalStackLayout Spacing="30">
+                    <VerticalStackLayout >
+                        <Image>
+                            <Image.Source Clicked="">
+                                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xF0B0;"
+                    Size="25"
+                    Color="White" />
+                            </Image.Source>
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label TextColor="white">Shade1</Label>
+                        <Label TextColor="white">Search</Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Image>
+                            <Image.Source Clicked="">
+                                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE801;"
+                    Size="25"
+                    Color="White" />
+                            </Image.Source>
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFillCansButtonClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label TextColor="white">Fill</Label>
+                        <Label TextColor="white">Cans</Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Image>
+                            <Image.Source Clicked="">
+                                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xF1E6;"
+                    Size="25"
+                    Color="White" />
+                            </Image.Source>
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnMaintenanceClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label TextColor="white">Maintenance</Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Image>
+                            <Image.Source Clicked="">
+                                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE802;"
+                    Size="25"
+                    Color="White" />
+                            </Image.Source>
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label TextColor="white">Create</Label>
+                        <Label TextColor="white">Shades</Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Image>
+                            <Image.Source Clicked="">
+                                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE803;"
+                    Size="25"
+                    Color="White" />
+                            </Image.Source>
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSetUpButtonClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label TextColor="white">Setup</Label>
+                    </VerticalStackLayout>
+
+
+                </HorizontalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
